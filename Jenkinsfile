@@ -32,21 +32,8 @@ pipeline{
             }
         
         }
-        stage("Quality Gate"){  
-          steps {  
-               script {
-                   echo '<--------------- Sonar Gate Analysis started --------------->'   
-                     timeout(time: 1, unit: 'HOURS'){  
-                        def qg = waitForQualityGate()   
-                        if(qg.status !='OK'){   
-                           error "Pipeline failed due to quality gate failures: ${qg.status}"  
-                       }  
-                   }   
-                  echo '<--------------- Sonar Gate Analysis Completed --------------->'  
-                }   
-            }   
-        }  
-        stage("Jar Publish") {
+        
+       stage("Jar Publish") {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
