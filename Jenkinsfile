@@ -4,7 +4,7 @@ def version   = '2.0.2'
 pipeline{
     agent {
         node {
-            label "slave"
+            label "slave02"
         }
     }
     environment {
