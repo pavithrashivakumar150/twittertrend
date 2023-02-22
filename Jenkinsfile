@@ -4,7 +4,7 @@ def version   = '2.0.2'
 pipeline{
     agent {
         node {
-            label "myslave"
+            label "docker_node"
         }
     }
     environment {
